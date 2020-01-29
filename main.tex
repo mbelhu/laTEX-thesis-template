@@ -1,0 +1,91 @@
+% This template was written by Maribel Hidalgo Urbaneja <mbelhu@gmail.com> in January 2020. 
+% It matches the university specification, and the one of the College of Arts in particular, for the academic year 2019/2020. Please note this can change
+% You may want to include more packages
+% Feel free to fork it and don't hesitate to get in touch with me if you find any errors
+
+\documentclass[12pt,oneside]{book} % for two-sided pages change to [twoside]
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} % this is the specification of the input encoding
+\setlength{\parskip}{1em} % this sets the paragraph separation to 1em
+\usepackage[onehalfspacing]{setspace}  % this gives the one-and-a-half line spacing requested by the guidelines
+
+\usepackage{fancyhdr}
+\pagestyle{myheadings}
+\fancyhf{}
+\rfoot{\thepage} % use the {fancyhdr} package and the following commands to remove default LaTEX headers and have page numbering in the top outer corner of each page (preferred option by the guidelines)
+
+\usepackage[top=1.8cm, bottom=1.8cm,left=4.0cm,right=1.5cm]{geometry}
+% This command defines the pages layout and margins complying with the university guidelines
+
+\usepackage{stix}  % this command specifies the use of Times font for the text
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\fontfamily{phv}\selectfont\huge\bfseries}
+  {\chaptertitlename\ \thechapter}
+  {20pt}
+  {\Huge}
+\titleformat{\section}
+  {\fontfamily{phv}\selectfont\bfseries\Large}
+  {\thesection}
+  {1em}
+  {}
+\titleformat{\subsection}
+  {\fontfamily{phv}\selectfont\bfseries\Large}
+  {\thesection}
+  {1em}
+  {}
+% the {titlesec} package and the following commands define the headings of the chapters, sections, and subsections. {phv} is the font code for Helvetica or Arial
+
+\usepackage{graphicx}  % this is the standard package for importing graphics files
+
+\usepackage{pdfpages} % use this package if you want to add a pdf to your thesis. Add the following command to the relevant .tex document to do so: \includepdf[pages=-]{nameofdocument.pdf}
+
+\usepackage[titletoc]{appendix} % use this package to add appendixes to the thesis
+
+\usepackage[backend=biblatex, style=chicago-authordate, bibencoding=ascii, uniquelist=true]{biblatex} % used biblatex as bibliographic package and Chicago author/date as citation model
+
+\addbibresource{bibliography.bib}  % this adds the bibliography
+
+\begin{document}
+\begin{titlepage}
+\centering
+\vspace*{3cm}  % needs * or the space is swallowed at the top of the page
+\bfseries\Large
+Title of Your Thesis\\
+\vspace{3cm}
+\normalfont\large
+Name Surname\\
+Bachelor's Degree\\
+Master's Degree\\
+\vspace{2cm}
+Submitted in fulfilment of the requirements for the\\
+Degree of Doctor of Philosophy\\
+\vspace{2cm}
+School Name\\
+College Name\\
+University of Glasgow\\
+\vspace{2cm}
+% Insert month and year of date deposited with library for final version
+Month Year\\
+\vspace{2cm}
+\copyright\ Name Surname Year
+\end{titlepage}
+
+
+\frontmatter  % this command turns off chapter numbering and adds roman page numbers
+\include{abstract}
+\tableofcontents
+\listoffigures
+\include{acknowledgements}
+\mainmatter % this command turns on chapter numbering and resets page numbers to Arabic
+\include{introduction}
+\include{lit-review}
+\include{methodology}
+\include{results}
+% \include{additional chapters}
+\include{conclusion}
+\appendix
+\include{apendix1}
+\printbibliography[heading=bibintoc, title=Bibliography]
+\end{document}
